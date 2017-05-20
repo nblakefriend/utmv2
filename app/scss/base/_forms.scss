@@ -1,0 +1,56 @@
+.roundedborder {
+    @include border-radius(2%);
+    border: 2px solid darken(#2c3242, 10%);
+}
+
+form {
+    font-size: 1em * .9;
+    margin: 20px 10px;
+    // padding:2em 0;
+    width:90%;
+}
+
+input, select, textarea {outline:none;}
+label {padding:0 .5em 0 .5em;}
+
+input[type="text"],
+input[type="password"],
+input[type="date"],
+input[type="datetime"],
+input[type="email"],
+input[type="number"],
+input[type="search"],
+input[type="tel"],
+input[type="time"],
+input[type="url"],
+textarea,
+select {
+  background: rgba(255,255,255,0.1);
+  border: none;
+  font-size: 14px;
+  height: auto;
+  margin: 5px 0;
+  outline: 0;
+  padding: 6px;
+  width: 100%;
+  background-color: #e8eeef;
+  border: 2px solid #e8eeef;
+  color: #444;
+  box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
+  border-radius: 2px;
+  margin-bottom: 10px;
+}
+
+/* Radio Buttons */
+// fieldset {
+//     @extend .roundedborder;
+//     text-align: left;
+//     margin:.2em 0 1em;
+//     width: 100%;
+//     padding: .5em 2em;
+// }
+
+legend {
+    display: inline;
+    padding: 0px 5px;
+}

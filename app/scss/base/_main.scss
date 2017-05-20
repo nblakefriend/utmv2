@@ -1,0 +1,277 @@
+/**
+ *  VARIABLES
+ */
+// Fonts
+$header-font: 'Oswald', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+$body-font: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+$base-text-size: 15px;
+$header-text-size: 1.125em;
+$footer-text-size: .85em;
+
+// Colors
+$header-color: #2c3242;
+$body-color: #0f0f0f;
+$primary-text-color: #f2f2f2;
+$secondary-text-color: darken($primary-text-color, 20%);
+$accent-color: #c47830;
+$accent-color-hover: darken($accent-color, 10%);
+$footer-text-color: darken($primary-text-color, 40%);
+
+$header-height: 125px;
+$header-height-smaller: $header-height - 50px;
+$header-image-height: $header-height - 10px;
+$header-image-height-smaller: $header-height-smaller - 10px;
+$footer-height: 75px;
+$marquee-height: 300px;
+/**
+ *  TYPOGRAPHY
+ */
+
+ h1, h2, h3, h4, h5, h6 {
+     font-family: 'Oswald', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+     font-weight: 400;
+     padding: 10px 0;
+     text-transform: uppercase;
+ }
+
+ h1 { font-size: 2em; }
+ h2 { font-size: 1.75em; }
+ h3 { font-size: 1.5em; }
+ h4 { font-size: 1.25em; }
+ h5 { font-size: 1em; }
+
+
+/**
+ *  PAGE LAYOUT
+ */
+
+html, body {
+    background-color: $body-color;
+    margin: 0;
+    padding: 0;
+    font-family: $body-font;
+	font-weight: 300;
+    line-height: 1.75;
+    color: $primary-text-color;
+    height: 100%;
+    font-size: $base-text-size;
+}
+
+hr { border-color: $header-color;  padding: 20px 0;}
+img { max-width: 100%; border: 0; padding: 10px 0; }
+iframe { max-width: 100%; margin: 5px 0; }
+
+a {
+    text-decoration: none;
+    color: $accent-color;
+    &:hover {
+        color: $accent-color-hover;
+        text-decoration: none;
+    }
+}
+
+img#site-logo {
+    height: $header-image-height;
+    -webkit-transition: height 0.3s;
+    -moz-transition: height 0.3s;
+    transition: height 0.3s;
+    position: relative;
+    margin: 5px auto;
+}
+
+header {
+    font-family: $header-font;
+    font-weight: 300;
+    font-size: $header-text-size;
+    width: 100%;
+    height: $header-height;
+    display: inline-block;
+    text-transform: uppercase;
+    background-color: $header-color;
+    position: fixed;
+    top: 0;
+    left: 0;
+    -webkit-transition: height 0.3s;
+    -moz-transition: height 0.3s;
+    transition: height 0.3s;
+    z-index: 99999;
+
+    &.smaller {
+        height: $header-height-smaller;
+
+        & img#site-logo {
+            height: $header-image-height-smaller;
+        }
+
+        & nav ul li {
+            -webkit-transition: all 0.3s;
+           -moz-transition: all 0.3s;
+            transition: all 0.3s;
+            padding:5px 20px;
+        }
+
+    }
+
+    & a {
+        color: #fff;
+        &:hover {
+            color: darken(#fff, 20%);
+        }
+    }
+
+    & nav {
+        width: 100%;
+        background-color: #fff;
+        margin: 0 auto;
+
+        & ul {
+            display: block;
+            list-style: none;
+
+            & li {
+                display: block;
+                padding: 30px 20px;
+                text-align: center;
+
+                & a {
+                    -webkit-transition: all 0.3s;
+                   -moz-transition: all 0.3s;
+                    transition: all 0.3s;
+                    color: darken(#fff, 10%);
+
+                    &:hover {
+                        padding-bottom: 5px;
+                        border-bottom: 2px solid darken(#fff, 20%);
+                    }
+                }
+
+                &.left {
+                    float: left;
+                }
+
+                &.right {
+                    float: right;
+                }
+            }
+        }
+    }
+
+}
+
+section {
+    padding-top: 0px;
+    padding-bottom: 50px;
+    position: relative;
+
+    &.main {
+        margin-top: $header-height; // Header height - move to var
+        margin-right: 0;
+        margin-left: 0;
+        margin-bottom: $footer-height * -1;
+        -webkit-transition: all 0.3s;
+        -moz-transition: all 0.3s;
+        transition: all 0.3s;
+        min-height: 100%;
+
+        &:after {
+            content: "";
+            display: block;
+            height: $footer-height;
+        }
+
+        &.smaller {
+            margin-top: $header-height-smaller;
+            -webkit-transition: all 0.3s;
+           -moz-transition: all 0.3s;
+            transition: all 0.3s;
+        }
+    }
+
+    &.content {
+        padding-top: 50px;
+        // padding-bottom: 20px;
+        // min-height: 2500px;
+        margin: 0;
+    }
+    &  .secondary-content {
+        color: $secondary-text-color;
+        & a {
+            color: $secondary-text-color;
+            &:hover {
+                color: $accent-color-hover;
+            }
+        }
+    }
+}
+
+footer {
+    width: 100%;
+    position: relative;
+    height: $footer-height;
+    bottom: 0;
+    left:0;
+    overflow-y: hidden;
+    background-color: $header-color;
+    color: $footer-text-color;
+    font-size: $footer-text-size;
+
+    & p {
+        padding: 20px;
+    }
+}
+
+.logo {
+    display: block;
+    position: relative;
+    max-width: 200px;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+    margin: 0 auto;
+    padding: 5px;
+
+    &.smaller {
+        max-width: 100px;
+    }
+}
+
+.full-marquee {
+    width: 100%;
+    height: $marquee-height;
+    background-color: #333;
+    padding: 20px;
+    margin-bottom: 20px;
+    position: relative;
+    background: url('../images/endeavor.jpg') no-repeat left center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+}
+
+.btn-main {
+    background-color: $accent-color;
+    color: $primary-text-color;
+
+    &:hover {
+        background-color: $accent-color-hover;
+        color: $primary-text-color;
+    }
+}
+
+.social {
+    ul:after {
+        clear:both;
+    }
+
+    li {
+        float: left;
+        padding: 10px;
+    }
+    li a {
+        color: $secondary-text-color;
+
+        &:hover {
+            color: $accent-color-hover;
+        }
+    }
+}

@@ -1,0 +1,8 @@
+{
+    "require": {
+        "slim/slim": "^3.8",
+        "slim/twig-view": "^2.2",
+        "twig/twig": "^1.33",
+        "nblakefriend/mailchimp-apiv3": "^1.0"
+    }
+}

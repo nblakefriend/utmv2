@@ -1,0 +1,104 @@
+
+
+@mixin font-smoothing() {
+  // Font antialising on Mac OS X
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+@mixin icon-setup($size) {
+    font: $size "FontAwesome";
+    @include font-smoothing();
+}
+
+
+
+    // Font awesome Icons in use.
+    $icons: (
+        facebook: (
+            char: "\f230",
+            size: 1.5em
+        ),
+        twitter: (
+            char: "\f099",
+            size:  1.5em
+        ),
+        instagram: (
+            char: "\f16d",
+            size:  1.5em
+        ),
+        youtube: (
+            char: "\f16a",
+            size:  1.5em
+        ),
+        users : (
+            char: "\f0c0",
+            size: 2em
+        ),
+        phone : (
+            char: "\f095",
+            size: 1em
+        ),
+        email : (
+            char: "\f0e0",
+            size: 1em
+        ),
+        pdf: (
+            char: "\f1c1",
+            size: 1.5em
+        ),
+        success: (
+            char: "\f058",
+            size: 3em
+        ),
+        error: (
+            char: "\f071",
+            size: 3em
+        ),
+        down : (
+            char: "\f107",
+            size: 1em
+        ),
+        nextRight: (
+            char: "\f105",
+            size: 1em
+        ),
+        right: (
+            char: "\f054",
+            size: 1em
+        ),
+        alert: (
+            char: "\f0f3",
+            size: 1em
+        ),
+        link: (
+            char: "\f08e",
+            size: 1em
+        ),
+        info: (
+            char: "\f05a",
+            size: 1em
+        ),
+        groups: (
+            char: "\f0c0",
+            size: 1em
+        )
+    );
+
+    // Dynmically create the classes to use the icons
+    @each $icon, $detail in $icons {
+
+      .icon-#{$icon} {
+          $icon-size: map-get($detail, size);
+          @include icon-setup($icon-size);
+
+        &:before {
+          content: map-get($detail, char);
+          margin-right: 5px;
+        }
+      }
+
+    }
+
+// }
